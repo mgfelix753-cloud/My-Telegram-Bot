@@ -1,3 +1,33 @@
+import os
+from threading import Thread
+from flask import Flask
+
+# Render Health Check အတွက် Web Server သေးသေးလေး
+app = Flask("")
+
+
+@app.route("/")
+def home():
+    return "Bot is running!"
+
+
+def run():
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
+
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+
+
+# ----------------------------------------
+# သင့်မူလ Telegram Bot Code များ ဒီအောက်မှာ ဆက်လက်ရှိပါမည်
+# ----------------------------------------
+
+if __name__ == "__main__":
+    keep_alive()  # Web server စတင်စက်နှိုးမည်
+    # bot.polling() သို့မဟုတ် သင့် bot ၏ main execution run ပေးပါ
 import telebot, asyncio, aiohttp, json, base64, random, re, os, string, time, uuid, hashlib, threading
 from telebot.async_telebot import AsyncTeleBot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
