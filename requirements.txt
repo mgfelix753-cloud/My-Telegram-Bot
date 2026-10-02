@@ -1,1 +1,6 @@
-pip3 install pyTelegramBotAPI aiohttp opencv-python ddddocr numpy aiohttp_socks && nohup python3 tast1.py > output.log 2>&1 &
+pyTelegramBotAPI
+aiohttp
+opencv-python
+ddddocr
+numpy
+aiohttp_socks
