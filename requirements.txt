@@ -1,7 +1,0 @@
-pyTelegramBotAPI
-aiohttp
-opencv-python
-ddddocr
-numpy
-aiohttp_socks
-Flask
